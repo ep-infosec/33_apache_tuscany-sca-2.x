@@ -1,0 +1,18 @@
+Tuscany - Getting Started - Helloworld Web Service Sample
+---------------------------------------------------------
+
+This sample extends the helloworld sample to make the helloworld service available as a SOAP based Web Service endpoint.
+
+The changes to the helloworld sample are:
+- update the pom.xml with the additional dependencies
+- update the composite to use the Web Service binding 
+
+As with all the getting-started samples you can run this sample with:
+
+   mvn tuscany:run 
+
+You really need a Web Service client to invoke the service but you can get the WSDL description for the service by using a web browser with the following URL:
+
+   http://localhost:8080/HelloworldComponent/Helloworld?wsdl
+
+which should return the WSDL document for the service.

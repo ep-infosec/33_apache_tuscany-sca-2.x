@@ -1,0 +1,70 @@
+<!--
+    * Licensed to the Apache Software Foundation (ASF) under one
+    * or more contributor license agreements.  See the NOTICE file
+    * distributed with this work for additional information
+    * regarding copyright ownership.  The ASF licenses this file
+    * to you under the Apache License, Version 2.0 (the
+    * "License"); you may not use this file except in compliance
+    * with the License.  You may obtain a copy of the License at
+    *
+    *   http://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing,
+    * software distributed under the License is distributed on an
+    * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    * KIND, either express or implied.  See the License for the
+    * specific language governing permissions and limitations
+    * under the License.
+-->
+<component>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>lib</outputDirectory>
+            <useTransitiveDependencies>true</useTransitiveDependencies>
+            <unpack>false</unpack>
+            <includes>
+                <include>org.apache.tuscany.sca.aggregation:tuscany-base-runtime-aggregation</include>
+                <include>org.apache.tuscany.sca.aggregation:tuscany-binding-rmi-runtime-aggregation</include>
+                <include>org.apache.tuscany.sca.aggregation:tuscany-binding-ws-runtime-axis2-aggregation</include>
+                <!-- needed by some of the sample build scripts but don't think we actually need to put this here -->
+                <include>org.apache.tuscany.sca:tuscany-sca-api</include>
+            </includes>
+        </dependencySet>
+
+<!-- dependencies referring to the shade jars, disabling for the time being
+        <dependencySet>
+            <outputDirectory>lib</outputDirectory>
+            <useTransitiveDependencies>true</useTransitiveDependencies>
+            <unpack>false</unpack>
+            <includes>
+                <include>org.apache.tuscany.sca.shades:tuscany-base</include>
+                <include>org.apache.ws.commons.schema:XmlSchema</include>
+                <include>cglib:cglib</include>
+                <include>com.hazelcast:*</include>
+                <include>wsdl4j:wsdl4j</include>
+                <include>org.apache.tuscany.sca:tuscany-sca-api</include>
+            </includes>
+        </dependencySet>
+
+        <dependencySet>
+            <outputDirectory>lib/spring</outputDirectory>
+            <useTransitiveDependencies>true</useTransitiveDependencies>
+            <unpack>false</unpack>
+            <includes>
+                <include>org.apache.tuscany.sca.shades:tuscany-spring</include>
+                <include>org.springframework:*</include>
+            </includes>
+        </dependencySet>
+-->
+    </dependencySets>
+    <fileSets>
+	<fileSet>
+	    <directory>src/main/release/bin/</directory>
+	    <outputDirectory>lib</outputDirectory>
+	    <includes>
+		<include>README</include>
+	    </includes>
+	</fileSet>
+    </fileSets>
+</component>
